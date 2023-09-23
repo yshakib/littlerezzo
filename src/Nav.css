@@ -1,0 +1,20 @@
+.top-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+  }
+.top-li {
+  display: inline;
+  padding: 20px;
+}
+
+.top-li a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+
+/*flex-wrap: wrap;
+    gap: 10px;*/
