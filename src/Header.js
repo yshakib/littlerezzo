@@ -3,7 +3,7 @@ import "./Nav.css";
 
 function Header() {
   return (
-    <header>
+    <header className="container">
       <img className="header-logo" src="Logo.svg" alt="Little Lemon logo" />
       <Nav />
     </header>

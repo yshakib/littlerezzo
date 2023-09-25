@@ -1,7 +1,7 @@
 function Main() {
   return (
-    <main className="container-fluid">
-        <div className="container-fluid banner-container">
+    <main>
+        <div className="banner-container">
             <div className="container">
                 <div className="row banner">
                     <div className="col-6 banner-text">
@@ -17,12 +17,14 @@ function Main() {
                     </p>
                     </div>
                     <div className="col-6 banner-right">
-                    <img
-                        src="restaurant.jpg"
-                        alt="Little Lemon seating area with tables for two and groups."
-                    />
                     </div>
                 </div>
+            </div>
+            <div className="banner-image-mobile">
+            </div>
+            <div className="image-container">
+                <div className="hero-left"></div>
+                <div className="hero-right"></div>
             </div>
         </div>
         <div className="container">

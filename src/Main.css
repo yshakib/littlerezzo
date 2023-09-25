@@ -1,17 +1,47 @@
 .banner-container {
+  position: relative;
+  height: auto;
   background-color: #495E57;
 }
+
+.image-container {
+  display: none;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  flex-direction: column;
+}
+
+.hero-left {
+    width: 100vw;
+    background-color: #495E57;
+    height: 300px;
+}
+
+.banner-image-mobile {
+  height: 300px;
+  width: 100vw;
+  background-size: cover;
+  background-image: url(./restaurant.jpg);
+}
+
+.hero-right {
+    height: 300px;
+    width: 100vw;
+    background: url(./restaurant.jpg);
+}
+
 .banner h1 {
   color: #F4CE14;
-  padding-left: 30px;
+  padding-left: 38px;
 }
 .banner h2 {
   color: #FFFFFF;
-  padding-left: 30px;
+  padding-left: 38px;
 }
 .banner p {
   color: #FFFFFF;
-  padding-left: 30px;
+  padding-left: 38px;
   flex-wrap: balance;
   justify-content: left;
   word-spacing: 1px;
@@ -19,10 +49,7 @@
   padding-right: 30px;
   padding-top: 40px;
 }
-.banner img {
-  display: flex;
-  max-width: 766px;
-}
+
 .book {
   font-family: Karla;
   color: black;
@@ -39,7 +66,27 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .banner {
-    max-height: 517px;
+  .image-container {
+    flex-direction: row;
+    display: flex;
+  }
+
+  .banner-image-mobile {
+    display: none;
+  }
+
+  .banner-container {
+    height: 517px;
+    background-color: transparent;
+  }
+
+  .hero-left {
+    width: 50vw;
+    height: 517px;
+  }
+
+  .hero-right {
+      height: 517px;
+      width: 50vw;
   }
 }

@@ -11,6 +11,9 @@
     width: 150px;
     padding-left: 20px;
 }
+ul li {
+  font-size: 15px;
+}
 ul li a {
     color: #000000;
     text-decoration: none;
@@ -19,4 +22,5 @@ ul li a {
 h5{
   text-indent: 39px;
   font-weight: medium;
+  margin-top: 5%;
 }

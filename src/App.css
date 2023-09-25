@@ -12,7 +12,7 @@ li {
 }
 
 .container {
-  max-width: 1220px; /* this controls the width of the page container */
+  max-width: 100%; /* this controls the width of the page container */
   width: 100%; /* makes sure the content stretches to the max-width value */
   padding-right: 15px; /* controls the gutter size on each side */
   padding-left: 15px;
@@ -22,16 +22,17 @@ li {
 
 .container-fluid {
   width: 100%;
-  /* TODO need to fix these */
-  /* padding-right: 15px;
+  padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
-  margin-left: auto; */
+  margin-left: auto;
 }
 
 .row {
   display: flex;
   flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
 }
 
 .col-6 {
@@ -55,6 +56,10 @@ li {
 }
 
 @media only screen and (min-width: 768px) {
+  .container {
+    max-width: 1220px;
+  }
+
   .col-6 {
     width: 50%;
   }
