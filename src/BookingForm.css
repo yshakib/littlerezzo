@@ -1,0 +1,35 @@
+.book {
+    font-family: Karla;
+    color: black;
+    padding-top: 10px;
+  }
+  .select {
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 20px;
+  }
+  .bookTable {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .submit {
+    width: 120px;
+    height: 30px;
+    flex-shrink: 0;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 5px;
+  }
+  .submit:active {
+    color: #495E57;
+    background-color: #F4CE14;
+    transform: translateY(4px);
+    box-shadow: 0 3px #495E57;
+  }
+  .submitButton {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }

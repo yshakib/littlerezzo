@@ -1,25 +1,21 @@
 * {
   font-family: Karla;
 }
-
 h1, h2, h3 {
-font-family: Markazi;
-font-weight: medium;
+  font-family: Markazi;
+  font-weight: medium;
 }
-
 li {
   list-style-type: none;
 }
-
 .container {
-  max-width: 100%; /* this controls the width of the page container */
-  width: 100%; /* makes sure the content stretches to the max-width value */
-  padding-right: 15px; /* controls the gutter size on each side */
+  max-width: 100%;
+  width: 100%;
+  padding-right: 15px;
   padding-left: 15px;
-  margin-right: auto; /* controls the gap between the content container and the edges of the page */
+  margin-right: auto;
   margin-left: auto;
 }
-
 .container-fluid {
   width: 100%;
   padding-right: 15px;
@@ -27,48 +23,40 @@ li {
   margin-right: auto;
   margin-left: auto;
 }
-
 .row {
   display: flex;
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
 }
-
 .col-6 {
   flex: 0 0 auto;
   width: 100%;
 }
-
 .col-4 {
   flex: 0 0 auto;
   width: 100%;
 }
-
 .col-3 {
   flex: 0 0 auto;
   width: 100%;
 }
-
 .col-12 {
   flex: 0 0 auto;
   width: 100%;
 }
-
 @media only screen and (min-width: 768px) {
   .container {
     max-width: 1220px;
   }
-
   .col-6 {
     width: 50%;
   }
-
   .col-4 {
      width: 33.33333333%;
   }
-
   .col-3 {
      width: 25%;
+     padding-top: 10px;
   }
 }

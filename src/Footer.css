@@ -1,26 +1,21 @@
 .footerNav {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
-
 .footer-background {
   background-color: #495E57;
 }
-
 .footerLogo {
-    width: 150px;
-    padding-left: 20px;
+  width: 150px;
+  padding-left: 20px;
 }
-ul li {
+ul li, ul li a {
+  color: #000000;
+  text-decoration: none;
   font-size: 15px;
 }
-ul li a {
-    color: #000000;
-    text-decoration: none;
-    font-size: 15px;
-}
-h5{
-  text-indent: 39px;
-  font-weight: medium;
+h6{
+  color: #000000;
+  text-indent: 30px;
   margin-top: 5%;
 }

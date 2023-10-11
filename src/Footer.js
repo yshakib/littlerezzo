@@ -34,7 +34,7 @@ function Footer() {
               </ul>
             </div>
             <div className="col-3">
-              <h5>Contact Us</h5>
+              <h6>Contact Us</h6>
               <ul>
                 <li>
                 11 Nanisca Road
@@ -48,7 +48,7 @@ function Footer() {
               </ul>
             </div>
             <div className="col-3">
-              <h5>Social Media</h5>
+              <h6>Social Media</h6>
               <ul>
                 <li>
                   <a href="/facebook">Facebook</a>
