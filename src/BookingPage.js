@@ -2,20 +2,21 @@ import { useState } from "react";
 import BookingForm from "./BookingForm";
 
 const defaultAvailableTimes = [
-    "17:00",
-    "17:30",
-    "18:00",
-    "18:30",
-    "19:00",
-    "19:30",
-    "20:00",
-    "20:30",
-    "21:00",
-    "21:30",
-    "22:00",
+    "",
+    "5:00pm",
+    "5:30pm",
+    "6:00pm",
+    "6:30pm",
+    "7:00pm",
+    "7:30pm",
+    "8:00pm",
+    "8:30pm",
+    "9:00pm",
+    "9:30pm",
+    "10:00pm",
 ];
 
-function BookingPage() {
+const BookingPage = () => {
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
     const [guests, setGuests] = useState("1");
@@ -23,19 +24,22 @@ function BookingPage() {
     const [specReqs, setSpecreqs] = useState("");
     const [availableTimes, setAvailableTimes] = useState(defaultAvailableTimes);
 
-    function updateTimes(date) {
+    console.log('occasion: ', occasion);
+
+    const updateTimes = date => {
         // date state
         setDate(date);
         // set availableTimes based on this date - update availableTimes state
         setAvailableTimes([
-            "17:00",
-            "19:00",
-            "19:30",
-            "20:00",
-            "20:30",
-            "21:00",
-            "21:30",
-            "22:00",
+            "",
+            "5:00pm",
+            "7:00pm",
+            "7:30pm",
+            "8:00pm",
+            "8:30pm",
+            "9:00pm",
+            "9:30pm",
+            "10:00pm",
         ]);
     }
 

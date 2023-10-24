@@ -1,4 +1,4 @@
-function Main() {
+const Main = () => {
   return (
     <main>
         <div className="banner-container">
@@ -12,7 +12,7 @@ function Main() {
                             We have a beautiful outdoor setting that is covered so that you can
                             enjoy your meal with us undeterred by the weather. Please let us
                             know under special requirements if you have any accessibility needs
-                            or require a high chair for your little bubbas. This way, we can set up
+                            or require a high chair for your little bubbas. This will allow us the pleasure of setting up
                             your table just the way you need it ahead of your arrival.
                         </p>
                     </div>

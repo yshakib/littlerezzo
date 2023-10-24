@@ -1,5 +1,3 @@
-function Order() {
-  return <h3>Order Online</h3>;
-}
+const Order = () => <h3></h3>;
 
 export default Order;

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-function Footer() {
+const Footer = () => {
   return (
       <footer className="footer-background footerNav">
         <div className="container">
@@ -54,7 +54,7 @@ function Footer() {
                   <a href="/facebook">Facebook</a>
                 </li>
                 <li>
-                  <a href="/instagram">instagram</a>
+                  <a href="/instagram">Instagram</a>
                 </li>
               </ul>
             </div>

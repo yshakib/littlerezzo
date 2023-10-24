@@ -1,7 +1,7 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import "./Header.css";
 import "./Footer.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "./Header";
 import Footer from "./Footer";
 import Menu from "./Menu";
@@ -12,7 +12,7 @@ import About from "./About";
 import BookingPage from "./BookingPage";
 import { Routes, Route } from 'react-router-dom';
 
-function App() {
+const App = () => {
   return (
     <div>
       <Header />

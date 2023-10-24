@@ -1,12 +1,6 @@
 import Main from "./Main";
 import "./Main.css";
 
-function Reservations() {
-    return (
-        <>
-        <Main />
-        </>
-    )
-}
+const Reservations = () => <> <Main /> </>;
 
 export default Reservations;

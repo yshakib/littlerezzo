@@ -1,20 +1,29 @@
 import "./BookingForm.css";
-import Occasion from "./Occasion";
 
 function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion, setOccasion, specReqs, setSpecreqs, availableTimes, setAvailableTimes, updateTimes }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!date || !time || !guests) {
-      alert("Please fill out the missing information.");
-      return;
-    }
     setDate("");
     setTime("");
     setGuests("1");
-    setOccasion("None");
+    setOccasion("none");
     setSpecreqs("");
   };
+
+  function renderOccasion(occasion) {
+    if (occasion === "none") {
+      return '';
+    } else if (occasion === "birthday") {
+      return <> for a <strong>{occasion}</strong></>;
+    } else if (occasion === "anniversary") {
+      return <> for an <strong>{occasion}</strong></>;
+    } else if (occasion === "engagement") {
+      return <> for an <strong>{occasion}</strong></>;
+    } else {
+      return '';
+    }
+  }
 
   return (
     <form onSubmit={handleSubmit}>
@@ -23,6 +32,15 @@ function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion
           <div className="col-12">
             <div className="bookTable">
               <h2 className="book">BOOK A TABLE</h2>
+              <label htmlFor="guests" className="select">
+                Select number of guests
+              </label>
+              <input
+                type="number"
+                min={1}
+                value={guests}
+                onChange={(e) => setGuests(e.target.value)}
+              required />
               <label htmlFor="date" className="select">
                 Select a date
               </label>
@@ -30,7 +48,7 @@ function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion
                 type="date"
                 value={date}
                 onChange={(e) => updateTimes(e.target.value)}
-              />
+              required />
               <label htmlFor="res-time" className="select">
                 Select a time
               </label>
@@ -38,36 +56,34 @@ function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion
                 id="res-time"
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
-                >
+                 required>
                     {availableTimes.map((item) =>
                         <option key={item}>{item}</option>
-                    )}
+                    )};
                 </select>
-              <label htmlFor="guests" className="select">
-                Select number of guests
-              </label>
-              <input
-                type="number"
-                value={guests}
-                onChange={(e) => setGuests(e.target.value)}
-              />
               <label htmlFor="occasion" className="select">
                 Select an occasion
               </label>
-              <Occasion />
-              <input
+              <select
+                id="occasion"
                 value={occasion}
                 onChange={(e) => setOccasion(e.target.value)}
-              />
+                >
+                    <option>none</option>
+                    <option>birthday</option>
+                    <option>anniversary</option>
+                    <option>engagement</option>
+                </select>
               <label htmlFor="specreqs" className="select">
                 Special requirements
               </label>
               <input
                 type="text"
                 value={specReqs}
-                maxLength={50}
+                maxLength={100}
                 onChange={(e) => setSpecreqs(e.target.value)}
               />
+              <p className="confirmation">I am making a booking for <strong>{guests}</strong> persons on <strong>{date}</strong> at <strong>{time}</strong>{renderOccasion(occasion)}.</p>
               <div className="submitButton">
               <button className="submit" type="submit">
                 Submit
@@ -80,4 +96,5 @@ function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion
     </form>
   );
 }
+
 export default BookingForm;
