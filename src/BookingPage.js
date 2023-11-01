@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useReducer } from "react";
 import BookingForm from "./BookingForm";
 
 const defaultAvailableTimes = [
@@ -16,31 +16,32 @@ const defaultAvailableTimes = [
     "10:00pm",
 ];
 
+const initializeTimes = () => defaultAvailableTimes;
+
+function availableTimesReducer(availableTimes, action) {
+      switch (action.type) {
+        case 'date_changed': {
+          return [
+            ...availableTimes,
+          ];
+        }
+      }
+    }
+
 const BookingPage = () => {
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
     const [guests, setGuests] = useState("1");
     const [occasion, setOccasion] = useState("None");
     const [specReqs, setSpecreqs] = useState("");
-    const [availableTimes, setAvailableTimes] = useState(defaultAvailableTimes);
-
-    console.log('occasion: ', occasion);
+    const [availableTimes, dispatch] = useReducer(availableTimesReducer, null, initializeTimes);
 
     const updateTimes = date => {
-        // date state
         setDate(date);
-        // set availableTimes based on this date - update availableTimes state
-        setAvailableTimes([
-            "",
-            "5:00pm",
-            "7:00pm",
-            "7:30pm",
-            "8:00pm",
-            "8:30pm",
-            "9:00pm",
-            "9:30pm",
-            "10:00pm",
-        ]);
+        dispatch({
+          type: 'date_changed',
+          date: date,
+        });
     }
 
   return <BookingForm
@@ -55,7 +56,6 @@ const BookingPage = () => {
     specReqs={specReqs}
     setSpecreqs={setSpecreqs}
     availableTimes={availableTimes}
-    setAvailableTimes={setAvailableTimes}
     updateTimes={updateTimes}
   />;
 }

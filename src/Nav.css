@@ -8,11 +8,24 @@
   padding: 20px;
 }
 .top-li a {
-  color: #000000;
+  color: #000;
   text-decoration: none;
   font-weight: bold;
+  position: relative;
 }
-.top-li a:hover {
-  color: #F4CE14;
-  }
+.top-li a::before {
+  content: '';
+  background-color: #F4CE14;
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  width: 100%;
+  height: 3px;
+  z-index: -1;
+  transition: all .3s ease-in-out;
+}
+a:hover::before {
+  bottom: 0;
+  height: 100%;
+}
 

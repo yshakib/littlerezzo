@@ -1,6 +1,6 @@
 import "./BookingForm.css";
 
-function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion, setOccasion, specReqs, setSpecreqs, availableTimes, setAvailableTimes, updateTimes }) {
+function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion, setOccasion, specReqs, setSpecreqs, availableTimes, updateTimes }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
