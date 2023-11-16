@@ -11,20 +11,21 @@ import Reservations from "./Reservations";
 import About from "./About";
 import BookingPage from "./BookingPage";
 import { Routes, Route } from 'react-router-dom';
+import ConfirmedBooking from './ConfirmedBooking';
 
 const App = () => {
   return (
     <div>
       <Header />
       <Routes>
-      <Route path="/reservations" element={<Reservations />} />
-      <Route index element={<Reservations />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/menu" element={<Menu />} />
-      <Route path="/order-online" element={<Order />} />
-      <Route path="/login" element={<Login />} />
+        <Route path="/reservations" element={<Reservations />} />
+        <Route path="/confirmedbooking" element={<ConfirmedBooking />} />
+        <Route index element={<Reservations />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/order-online" element={<Order />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
-      <BookingPage />
       <Footer />
     </div>
   );

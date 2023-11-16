@@ -1,15 +1,6 @@
 import "./BookingForm.css";
 
-function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion, setOccasion, specReqs, setSpecreqs, availableTimes, updateTimes }) {
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setDate("");
-    setTime("");
-    setGuests("1");
-    setOccasion("none");
-    setSpecreqs("");
-  };
+function BookingForm({ date, time, setTime, guests, setGuests, occasion, setOccasion, specReqs, setSpecreqs, availableTimes, updateTimes, submitForm }) {
 
   function renderOccasion(occasion) {
     if (occasion === "none") {
@@ -26,7 +17,7 @@ function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={submitForm}>
       <div className="container">
         <div className="row">
           <div className="col-12">
@@ -37,6 +28,7 @@ function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion
               </label>
               <input
                 type="number"
+                name="guests"
                 min={1}
                 value={guests}
                 onChange={(e) => setGuests(e.target.value)}
@@ -46,6 +38,7 @@ function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion
               </label>
               <input
                 type="date"
+                name="date"
                 value={date}
                 onChange={(e) => updateTimes(e.target.value)}
               required />
@@ -54,10 +47,12 @@ function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion
               </label>
               <select
                 id="res-time"
+                name="time"
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
                  required>
-                    {availableTimes.map((item) =>
+                    <option value=""></option>
+                    {availableTimes && Array.isArray(availableTimes) && availableTimes.map((item) =>
                         <option key={item}>{item}</option>
                     )};
                 </select>
@@ -66,6 +61,7 @@ function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion
               </label>
               <select
                 id="occasion"
+                name="occasion"
                 value={occasion}
                 onChange={(e) => setOccasion(e.target.value)}
                 >
@@ -79,6 +75,7 @@ function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion
               </label>
               <input
                 type="text"
+                name="requirements"
                 value={specReqs}
                 maxLength={100}
                 onChange={(e) => setSpecreqs(e.target.value)}
