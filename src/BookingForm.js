@@ -1,21 +1,47 @@
 import "./BookingForm.css";
 
-function BookingForm({ date, time, setTime, guests, setGuests, occasion, setOccasion, specReqs, setSpecreqs, availableTimes, updateTimes, submitForm }) {
-
+function BookingForm({
+  date,
+  time,
+  setTime,
+  guests,
+  setGuests,
+  occasion,
+  setOccasion,
+  specReqs,
+  setSpecreqs,
+  availableTimes,
+  updateTimes,
+  submitForm,
+}) {
   function renderOccasion(occasion) {
     if (occasion === "none") {
-      return '';
+      return "";
     } else if (occasion === "birthday") {
-      return <> for a <strong>{occasion}</strong></>;
+      return (
+        <>
+          {" "}
+          for a <strong>{occasion}</strong>
+        </>
+      );
     } else if (occasion === "anniversary") {
-      return <> for an <strong>{occasion}</strong></>;
+      return (
+        <>
+          {" "}
+          for an <strong>{occasion}</strong>
+        </>
+      );
     } else if (occasion === "engagement") {
-      return <> for an <strong>{occasion}</strong></>;
+      return (
+        <>
+          {" "}
+          for an <strong>{occasion}</strong>
+        </>
+      );
     } else {
-      return '';
+      return "";
     }
   }
-
   return (
     <form onSubmit={submitForm}>
       <div className="container">
@@ -32,7 +58,8 @@ function BookingForm({ date, time, setTime, guests, setGuests, occasion, setOcca
                 min={1}
                 value={guests}
                 onChange={(e) => setGuests(e.target.value)}
-              required />
+                required
+              />
               <label htmlFor="date" className="select">
                 Select a date
               </label>
@@ -41,7 +68,8 @@ function BookingForm({ date, time, setTime, guests, setGuests, occasion, setOcca
                 name="date"
                 value={date}
                 onChange={(e) => updateTimes(e.target.value)}
-              required />
+                required
+              />
               <label htmlFor="res-time" className="select">
                 Select a time
               </label>
@@ -50,12 +78,16 @@ function BookingForm({ date, time, setTime, guests, setGuests, occasion, setOcca
                 name="time"
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
-                 required>
-                    <option value=""></option>
-                    {availableTimes && Array.isArray(availableTimes) && availableTimes.map((item) =>
-                        <option key={item}>{item}</option>
-                    )};
-                </select>
+                required
+              >
+                <option value=""></option>
+                {availableTimes &&
+                  Array.isArray(availableTimes) &&
+                  availableTimes.map((item) => (
+                    <option key={item}>{item}</option>
+                  ))}
+                ;
+              </select>
               <label htmlFor="occasion" className="select">
                 Select an occasion
               </label>
@@ -64,12 +96,12 @@ function BookingForm({ date, time, setTime, guests, setGuests, occasion, setOcca
                 name="occasion"
                 value={occasion}
                 onChange={(e) => setOccasion(e.target.value)}
-                >
-                    <option>none</option>
-                    <option>birthday</option>
-                    <option>anniversary</option>
-                    <option>engagement</option>
-                </select>
+              >
+                <option>none</option>
+                <option>birthday</option>
+                <option>anniversary</option>
+                <option>engagement</option>
+              </select>
               <label htmlFor="specreqs" className="select">
                 Special requirements
               </label>
@@ -80,11 +112,15 @@ function BookingForm({ date, time, setTime, guests, setGuests, occasion, setOcca
                 maxLength={100}
                 onChange={(e) => setSpecreqs(e.target.value)}
               />
-              <p className="confirmation">I am making a booking for <strong>{guests}</strong> persons on <strong>{date}</strong> at <strong>{time}</strong>{renderOccasion(occasion)}.</p>
+              <p className="confirmation">
+                I am making a booking for <strong>{guests}</strong> persons on{" "}
+                <strong>{date}</strong> at <strong>{time}</strong>
+                {renderOccasion(occasion)}.
+              </p>
               <div className="submitButton">
-              <button className="submit" type="submit">
-                Submit
-              </button>
+                <button className="submit" type="submit">
+                  Submit
+                </button>
               </div>
             </div>
           </div>

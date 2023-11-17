@@ -1,4 +1,4 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import "./Header.css";
 import "./Footer.css";
@@ -10,8 +10,8 @@ import Login from "./Login";
 import Reservations from "./Reservations";
 import About from "./About";
 import BookingPage from "./BookingPage";
-import { Routes, Route } from 'react-router-dom';
-import ConfirmedBooking from './ConfirmedBooking';
+import { Routes, Route } from "react-router-dom";
+import ConfirmedBooking from "./ConfirmedBooking";
 
 const App = () => {
   return (
@@ -29,6 +29,6 @@ const App = () => {
       <Footer />
     </div>
   );
-}
+};
 
 export default App;

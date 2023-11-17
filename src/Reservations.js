@@ -3,12 +3,12 @@ import BookingPage from "./BookingPage";
 import "./Main.css";
 
 const Reservations = () => {
-    return (
-        <>
-            <Main />
-            <BookingPage />
-        </>
-    );
+  return (
+    <>
+      <Main />
+      <BookingPage />
+    </>
+  );
 };
 
 export default Reservations;
