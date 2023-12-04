@@ -1,11 +1,13 @@
 import React from "react";
+import "./ConfirmedBooking.css";
 
 const ConfirmedBooking = () => {
   return (
-    <div>
-      <h3>
-        Your booking is confirmed. We look forward to delighting you soon!
-      </h3>
+    <div className="confirmation">
+      <h4>
+        Thank you! Your booking is now confirmed. We look forward to delighting
+        you soon.
+      </h4>
     </div>
   );
 };

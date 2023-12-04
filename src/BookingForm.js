@@ -1,6 +1,10 @@
 import "./BookingForm.css";
 
 function BookingForm({
+  name,
+  setName,
+  phone,
+  setPhone,
   date,
   time,
   setTime,
@@ -49,12 +53,40 @@ function BookingForm({
           <div className="col-12">
             <div className="bookTable">
               <h2 className="book">BOOK A TABLE</h2>
+              <label htmlFor="name" className="select">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                className="inputField"
+                minLength={2}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+              <label htmlFor="phone" className="select">
+                Phone number
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                className="inputField"
+                maxLength={10}
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                required
+              />
               <label htmlFor="guests" className="select">
                 Select number of guests
               </label>
               <input
                 type="number"
+                id="guests"
                 name="guests"
+                className="inputField"
                 min={1}
                 value={guests}
                 onChange={(e) => setGuests(e.target.value)}
@@ -65,7 +97,9 @@ function BookingForm({
               </label>
               <input
                 type="date"
+                id="date"
                 name="date"
+                className="inputField"
                 value={date}
                 onChange={(e) => updateTimes(e.target.value)}
                 required
@@ -76,6 +110,7 @@ function BookingForm({
               <select
                 id="res-time"
                 name="time"
+                className="inputField"
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
                 required
@@ -94,6 +129,7 @@ function BookingForm({
               <select
                 id="occasion"
                 name="occasion"
+                className="inputField"
                 value={occasion}
                 onChange={(e) => setOccasion(e.target.value)}
               >
@@ -107,18 +143,27 @@ function BookingForm({
               </label>
               <input
                 type="text"
-                name="requirements"
+                id="specreqs"
+                className="inputField"
                 value={specReqs}
                 maxLength={100}
                 onChange={(e) => setSpecreqs(e.target.value)}
               />
-              <p className="confirmation">
-                I am making a booking for <strong>{guests}</strong> persons on{" "}
-                <strong>{date}</strong> at <strong>{time}</strong>
-                {renderOccasion(occasion)}.
+              <p className="sentence">
+                <strong>{name}</strong> is making a booking for{" "}
+                <strong>{guests}</strong> persons on <strong>{date}</strong> at{" "}
+                <strong>{time}</strong>
+                {renderOccasion(occasion)}. {name} can be reached on{" "}
+                <strong>{phone}</strong> for any issues relating to the booking
+                only.
               </p>
               <div className="submitButton">
-                <button className="submit" type="submit">
+                <button
+                  className="submit"
+                  type="submit"
+                  disabled={!name || !phone || !guests || !date || !time}
+                  aria-label="On Click"
+                >
                   Submit
                 </button>
               </div>

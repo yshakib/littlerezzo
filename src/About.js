@@ -1,3 +1,5 @@
-const About = () => <h1></h1>;
+import "./About.css";
+
+const About = () => <h1>This is the About page.</h1>;
 
 export default About;

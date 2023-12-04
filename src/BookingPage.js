@@ -29,6 +29,8 @@ const BookingPage = () => {
       console.error("Error fetching times:", error);
     }
   };
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState("1");
@@ -65,6 +67,8 @@ const BookingPage = () => {
 
   const submitForm = (e) => {
     e.preventDefault();
+    setName("");
+    setPhone("");
     setDate("");
     setTime("");
     setGuests("1");
@@ -84,6 +88,10 @@ const BookingPage = () => {
 
   return (
     <BookingForm
+      name={name}
+      setName={setName}
+      phone={phone}
+      setPhone={setPhone}
       date={date}
       setDate={setDate}
       time={time}

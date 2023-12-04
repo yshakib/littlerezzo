@@ -13,10 +13,17 @@
     flex-direction: column;
     align-items: center;
   }
-  .confirmation {
+  .sentence {
     padding-top: 20px;
     color: #495E57;
     font-size: 1.1rem;
+    text-align: center;
+  }
+  input[type="text"]:focus:invalid {
+    border-width: 1.5px;
+    border-style: solid;
+    border-color: red;
+    outline: 0;
   }
   .submit {
     width: 120px;
@@ -28,21 +35,22 @@
     border-radius: 10px;
     border: 5px;
   }
+  .submit:hover {
+    color: #F4CE14;
+  }
   .submit:active {
-    color: #495E57;
-    background-color: #F4CE14;
     transform: translateY(3px);
   }
   .submitButton {
     padding-top: 20px;
     padding-bottom: 20px;
   }
-  input[type="date"], input[type="number"], #res-time, #occasion, input[type="text"] {
+  .inputField {
     border-radius: 10px;
     border-color: black;
     border-width: 1px;
     width: 180px;
-    line-height: 1.1;
+    padding: 4px;
     background-color: #FFFFFF;
     color: #495E57;
   }
