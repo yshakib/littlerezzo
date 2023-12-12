@@ -1,17 +1,15 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import "./Header.css";
-import "./Footer.css";
-import Header from "./Header";
-import Footer from "./Footer";
-import Menu from "./Menu";
-import Order from "./OrderOnline";
-import Login from "./Login";
-import Reservations from "./Reservations";
-import About from "./About";
-import BookingPage from "./BookingPage";
+import "./components/Header.css";
+import "./components/Footer.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Menu from "./components/Menu";
+import Order from "./components/OrderOnline";
+import Login from "./components/Login";
+import Reservations from "./components/Reservations";
+import About from "./components/About";
 import { Routes, Route } from "react-router-dom";
-import ConfirmedBooking from "./ConfirmedBooking";
+import ConfirmedBooking from "./components/ConfirmedBooking";
 
 const App = () => {
   return (

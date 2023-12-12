@@ -1,6 +1,6 @@
 import { useState, useReducer } from "react";
-import BookingForm from "./BookingForm";
-import { fetchAPI, submitAPI } from "./MockData";
+import BookingForm from "../BookingForm/BookingForm";
+import { fetchAPI, submitAPI } from "../../data/mocks/MockData";
 import { useNavigate } from "react-router-dom";
 
 export function availableTimesReducer(availableTimes, action) {
@@ -74,7 +74,6 @@ const BookingPage = () => {
     setGuests("1");
     setOccasion("none");
     setSpecreqs("");
-    // Read the form data
     const form = e.target;
     const formData = new FormData(form);
     const formEntries = Object.fromEntries(formData.entries());
