@@ -46,8 +46,9 @@ function BookingForm({
       return "";
     }
   }
+
   return (
-    <form onSubmit={submitForm}>
+    <form onSubmit={submitForm} data-testid="booking-form">
       <div className="container">
         <div className="row">
           <div className="col-12">
@@ -116,12 +117,11 @@ function BookingForm({
                 required
               >
                 <option value=""></option>
-                {availableTimes &&
-                  Array.isArray(availableTimes) &&
-                  availableTimes.map((item) => (
+                {availableTimes.times &&
+                  Array.isArray(availableTimes.times) &&
+                  availableTimes.times.map((item) => (
                     <option key={item}>{item}</option>
                   ))}
-                ;
               </select>
               <label htmlFor="occasion" className="select">
                 Select an occasion

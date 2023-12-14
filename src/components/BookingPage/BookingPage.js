@@ -4,41 +4,42 @@ import { fetchAPI, submitAPI } from "../../data/mocks/MockData";
 import { useNavigate } from "react-router-dom";
 
 export function availableTimesReducer(availableTimes, action) {
+  console.log("availableTimesReducer:", availableTimes, action);
   switch (action.type) {
-    case "set_times": {
-      return [...action.times];
-    }
-    default: {
-      return availableTimes;
-    }
+    case "set_times":
+      return { times: [...action.times] };
+    default:
+      return { times: availableTimes };
   }
 }
 
-const BookingPage = () => {
+export const getTodaysDate = () => {
+  const today = new Date();
+  return `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+};
+
+export function initializeTimes(initialTimes) {
+  console.log("initializeTimes:", initialTimes);
+  return {
+    times: initialTimes,
+  };
+}
+
+const BookingPage = ({ initialTimes }) => {
   const today = new Date();
   const formattedDate = `${today.getFullYear()}-${
     today.getMonth() + 1
   }-${today.getDate()}`;
-
-  const initializeTimes = async () => {
-    try {
-      const response = await fetchAPI(formattedDate);
-      dispatch({ type: "set_times", times: response });
-      setDate(formattedDate);
-    } catch (error) {
-      console.error("Error fetching times:", error);
-    }
-  };
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState(formattedDate);
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState("1");
   const [occasion, setOccasion] = useState("None");
   const [specReqs, setSpecreqs] = useState("");
   const [availableTimes, dispatch] = useReducer(
     availableTimesReducer,
-    [],
+    initialTimes,
     initializeTimes
   );
   const navigate = useNavigate();
@@ -81,6 +82,7 @@ const BookingPage = () => {
   };
 
   const updateTimes = (date) => {
+    console.log("updateTimes");
     setDate(date);
     fetchTimesByDate(date);
   };
