@@ -49,7 +49,6 @@ const BookingPage = ({ initialTimes }) => {
       const response = await fetchAPI(date);
       dispatch({ type: "set_times", times: response });
     } catch (error) {
-      // TODO - handle telling the customer that the date has no times available on the form
       console.error("Error fetching times:", error);
     }
   };
@@ -61,7 +60,6 @@ const BookingPage = ({ initialTimes }) => {
         navigate("/confirmedbooking");
       }
     } catch (error) {
-      // TODO - handle telling the customer that the date has no times available on the form
       console.error("Error submitting form:", error);
     }
   };

@@ -10,7 +10,6 @@ const Reservations = () => {
 
   async function fetchTimes() {
     setLoading(true);
-    // setError(null);
     const today = new Date();
     const formattedDate = `${today.getFullYear()}-${
       today.getMonth() + 1
@@ -18,12 +17,8 @@ const Reservations = () => {
 
     try {
       const response = await fetchAPI(formattedDate);
-      // throw new Error('borked');
       setTimes(response);
-      // using pageData in here causes a missing dependency error
-      // console.log(pageData);
     } catch (error) {
-      // setError(error);
       setLoading(false);
     } finally {
       setLoading(false);
