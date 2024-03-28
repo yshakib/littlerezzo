@@ -4,7 +4,7 @@
     margin-top: auto;
   }
 .top-li {
-  display: inline;
+  display: inline-flex;
   padding: 20px;
 }
 .top-li a {

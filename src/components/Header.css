@@ -1,12 +1,33 @@
 header {
     display: flex;
+    justify-content: space-between;
     flex-shrink: 0;
     max-width: 1440px;
     padding-bottom: 20px;
   }
 
+.header-logo {
+  width: 221px;
+  height: 55px;
+  padding-top: 10px;
+  }
+
+@media only screen and (max-width: 480px) {
+  header {
+    display: block;
+    justify-content: left;
+  }
+  .top-nav ul {
+    justify-content: left;
+  }
   .header-logo {
-    width: 221px;
-    height: 55px;
-    padding-top: 10px;
-    }
+    width: 7em;
+    height: auto;
+  }
+  .top-nav a {
+    font-size: .8em;
+  }
+  .top-li li {
+    padding: 0;
+  }
+}
