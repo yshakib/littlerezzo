@@ -3,11 +3,14 @@ import "./ConfirmedBooking.css";
 
 const ConfirmedBooking = () => {
   return (
-    <div className="confirmation">
-      <h4>
-        Thank you! Your booking is now confirmed. We look forward to delighting
-        you soon.
-      </h4>
+    <div className="container">
+      <div className="confirmation">
+        <p>
+          Thank you!<br/>
+          Your booking is now confirmed. We look forward to delighting
+          you soon.
+        </p>
+      </div>
     </div>
   );
 };
