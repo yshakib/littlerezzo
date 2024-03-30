@@ -15,19 +15,9 @@ header {
 @media only screen and (max-width: 480px) {
   header {
     display: block;
-    justify-content: left;
-  }
-  .top-nav ul {
-    justify-content: left;
   }
   .header-logo {
     width: 7em;
     height: auto;
-  }
-  .top-nav a {
-    font-size: .8em;
-  }
-  .top-li li {
-    padding: 0;
   }
 }

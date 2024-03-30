@@ -1,57 +1,64 @@
-  .book {
-    font-family: Karla;
-    color: black;
-    padding-top: 10px;
+.book {
+  font-family: Karla;
+  color: black;
+  padding-top: 10px;
   }
-  .select {
-    font-size: 18px;
-    font-weight: bold;
-    padding-top: 20px;
+.select {
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 20px;
   }
-  .bookTable {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.bookTable {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   }
+.sentence {
+  padding-top: 20px;
+  color: #495E57;
+  font-size: 1.1rem;
+  text-align: center;
+  }
+input[type="text"]:focus:invalid {
+  border-width: 1.5px;
+  border-style: solid;
+  border-color: red;
+  outline: 0;
+  }
+.submit {
+  width: 120px;
+  height: 30px;
+  flex-shrink: 0;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 5px;
+  }
+.submit:hover {
+  color: #F4CE14;
+  }
+.submit:active {
+  transform: translateY(3px);
+  }
+.submitButton {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  }
+.inputField {
+  border-radius: 10px;
+  border-color: black;
+  border-width: 1px;
+  width: 180px;
+  padding: 4px;
+  background-color: #FFFFFF;
+  color: #495E57;
+  }
+
+@media only screen and (max-width: 480px) {
   .sentence {
-    padding-top: 20px;
-    color: #495E57;
-    font-size: 1.1rem;
-    text-align: center;
+    
+    width: 80%;
   }
-  input[type="text"]:focus:invalid {
-    border-width: 1.5px;
-    border-style: solid;
-    border-color: red;
-    outline: 0;
-  }
-  .submit {
-    width: 120px;
-    height: 30px;
-    flex-shrink: 0;
-    background-color: black;
-    color: white;
-    font-weight: bold;
-    font-size: 1rem;
-    border-radius: 10px;
-    border: 5px;
-  }
-  .submit:hover {
-    color: #F4CE14;
-  }
-  .submit:active {
-    transform: translateY(3px);
-  }
-  .submitButton {
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-  .inputField {
-    border-radius: 10px;
-    border-color: black;
-    border-width: 1px;
-    width: 180px;
-    padding: 4px;
-    background-color: #FFFFFF;
-    color: #495E57;
-  }
+}

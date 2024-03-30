@@ -11,9 +11,9 @@
   flex-direction: column;
 }
 .hero-left {
-    width: 100vw;
-    background-color: #495E57;
-    height: 300px;
+  width: 100vw;
+  background-color: #495E57;
+  height: 300px;
 }
 .banner-image-mobile, .hero-right {
   height: 300px;
@@ -33,7 +33,6 @@
 .banner p {
   color: #FFFFFF;
   padding-left: 20px;
-  flex-wrap: balance;
   justify-content: left;
   word-spacing: 1px;
   line-height: 30px;
@@ -57,7 +56,22 @@
     height: 517px;
   }
   .hero-right {
-      height: 517px;
-      width: 50vw;
+    height: 517px;
+    width: 50vw;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .banner p {
+    font-size: .875em;
+    margin-right: 5%;
+    padding: 1.25em;
+    word-spacing: normal;
+  }
+  .col-6 {
+    background-color: #495E57;
+  }
+  .banner-image-mobile, .hero-right {
+    width: 100%;
   }
 }
